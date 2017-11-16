@@ -40,7 +40,7 @@ leaflet(options = leafletOptions(minZoom = 5, maxZoom = 14)) %>%
                 bringToFront = TRUE),
               label = ~as.character(
                 paste(L_HOOD, "-", S_HOOD))
-  )  
+  )
 
 
 
