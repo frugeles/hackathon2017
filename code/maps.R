@@ -8,9 +8,11 @@ library(ggmap)
 
 data_path = './data/'
 
-Seattle <- readOGR(dsn=paste0(data_path,'seattle_zones/WGS84/'),layer='Neighborhoods')
+#Seattle <- readOGR(dsn=paste0(data_path,'seattle_zones/WGS84/'),layer='Neighborhoods')
+#save.image(paste0(data_path,'Seattle.RData'))
 
 ## load data
+load(file = paste0(data_path,'Seattle.RData'))
 plot(Seattle)
 
 Seattle@data
