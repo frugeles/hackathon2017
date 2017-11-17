@@ -63,7 +63,7 @@ shinydashboard::dashboardPage(
         ### Map
         shiny::tabPanel(
           "Map",
-            leafletOutput("LeafletOut.byAll", height = 1000)
+            leafletOutput("LeafletOut.byAll", height = 700)
             
           )
         )

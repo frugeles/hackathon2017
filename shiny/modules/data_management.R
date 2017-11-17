@@ -1,5 +1,5 @@
 ### read data
-print(getwd())
+#print(getwd())
 load("./../data/calls_Final.RData")
 calls_Final$district_name <- levels(calls_Final$district_name)[calls_Final$district_name]
 calls_Final['NamePop'] <- paste(calls_Final$region_name, calls_Final$district_name, sep = ' - ')

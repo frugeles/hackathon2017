@@ -14,13 +14,13 @@ library(sp)
 
 data_path = './data/'
 
-load(paste0(data_path,'calls_district.RData'))
-calls <- calls[!is.na(calls$districtID),]
+load(paste0(data_path,'calls_Final.RData'))
 
 
-nb_calls_district <- calls %>% 
+
+nb_calls_district <- calls_Final %>% 
   group_by(districtID) %>% 
-  summarise(colorTest=n()*100/nrow(calls))
+  summarise(colorTest=n()*100/nrow(calls_Final))
 
 
 

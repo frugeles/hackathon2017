@@ -36,7 +36,6 @@ shinyServer(function(input, output) {
       %>% summarise(Calls=as.integer(sum(Calls)))
       %>% merge(placeDF)
       %>% mutate(Population:=as.integer(Population), Call.Pop=as.numeric(Calls/Population))
-      %>% arrange_(.dots=paste(input$IN_Sort2, input$IN_Sort, sep=""))
     )[, Call.Pop:=Call.Pop/max(Call.Pop)]
     
     Seattle@data <- right_join(temp,Seattle@data,by=c('districtID'='OBJECTID'))
@@ -47,7 +46,7 @@ shinyServer(function(input, output) {
                     na.color = "grey40", reverse = T)
     l %>% 
       addLegend(pal = pal, values = round(Seattle@data$Call.Pop, 1), 
-                    opacity = 0.7, position = "bottomright", title = "Percentage of total calls to 911") %>% 
+                    opacity = 0.7, position = "bottomright", title = "Calls per Population (Max = 1)") %>% 
       addPolygons(data=Seattle, weight = 1, 
                   fill = ~Call.Pop, fillColor = ~pal(Call.Pop),
                   opacity=1, fillOpacity = 0.6, color=grey(0.5),
