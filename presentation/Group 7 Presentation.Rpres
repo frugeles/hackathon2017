@@ -1,0 +1,20 @@
+Group 7: 
+911-App for house buyers
+========================================================
+author: 
+date: 
+autosize: true
+What we did
+========================================================
+- Problem:      Want to buy a house in Seattle, but what about the area?
+                Dangerous places? 
+- Solution:     911-App for Seattle-districts
+- What we did:  Visulize the Propensity for 911-calls in an interactive App based on the type                 of call and the Seattle district
+  - Underlying data:  Seatle-911 calls, Population density by district, Seattle shapefile
+  -        Text mine the Type of call into "causes" and "Typ of Alarm" 
+  -        Add population density and build clean database with all inforamtion
+  -        Aggregate data on the level of district and type of claim
+  -        Visiualize in a Map
+  -        Shiny App for interactive interrogation by date, time of the day and type of call
+  -        Let's have a look .....
+

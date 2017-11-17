@@ -1,32 +1,13 @@
 
 ## load map data once
-  France <- readOGR(dsn="./data/maps", layer="FRA_dept")
-
-
-## create additionnal KPI's at regionId level
-  
-  KPI.per.reg <- reportDF %>%
-    group_by(regionId, LOB, network) %>%
-    summarize(NB = sum(newBusiness),
-              canc = sum(cancellation),
-              portfolio = sum(portfolio)) %>%
-    mutate(NB.rate = NB/portfolio,
-           canc.rate = canc/portfolio,
-           netInflow = as.numeric(NB - canc)) %>%
-    select(-c(NB, canc, portfolio)) %>%
-    gather(kpi, values, c(NB.rate, canc.rate, netInflow)) %>%
-    unite(tmp, LOB, network, kpi, sep = "_") %>%
-    spread(tmp, values) %>%
-    as.data.table()
-  
-## merge with @data slot to make it available for leaflet
-  France@data <- left_join(France@data, KPI.per.reg, by = c("DEPT_ID" = "regionId"))
+  data_path <- './../data/'
+  load(file = paste0(data_path,'Seattle.RData'))
   
 
 ## centroid coordinates of each regions
-  centr <- rgeos::gCentroid(France)@coords
+  centr.STL <- gCentroid(Seattle)@coords
   
 ## leaflet background
-  l <- leaflet() %>% 
-    addTiles() %>% 
-    setView(centr[1], centr[2], zoom = 5) 
+  l <- leaflet(options = leafletOptions(minZoom = 5, maxZoom = 14)) %>% 
+    addProviderTiles("Esri.WorldImagery") %>%
+    setView(centr.STL[1], centr.STL[2], zoom = 10)

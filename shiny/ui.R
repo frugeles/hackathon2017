@@ -63,15 +63,8 @@ shinydashboard::dashboardPage(
         ### Map
         shiny::tabPanel(
           "Map",
-          fluidRow(
-            selectInput("KPI.In",
-                        label = h4("Select your KPI"),
-                        choices =  list("New Business Rate (%)" = "NB.rate",
-                                        "Cancellation Rate(%)" = "canc.rate",
-                                        "NetInflow" = "netInflow"),
-                        selected = "New Business Rate (%)"),
             leafletOutput("LeafletOut.byAll")
-            )
+            
           )
         )
     )  

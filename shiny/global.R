@@ -1,7 +1,7 @@
 library(data.table)
 library(dplyr)
 library(shiny)
-library(shinythemes)
+#library(shinythemes)
 library(shinydashboard)
 library(scales)
 library(plotly)
@@ -15,7 +15,6 @@ library(RColorBrewer)
 source("./modules/data_management.R")
 
 ### dummy geodata
-source("./modules/data_management_geo.R")
 source("./modules/geodata_management.R")
 
 
