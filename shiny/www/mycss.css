@@ -1,0 +1,94 @@
+/* ATTRIBUTION: CSS file taken from the 'superzip' example by Joe Cheng at Rstudio */
+/* URL: https://github.com/rstudio/shiny-examples/tree/master/063-superzip-example */
+
+input[type="number"] {
+  max-width: 80%;
+}
+
+.outer {
+  position: fixed;
+  top: 41px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+/* Scroll bar for main panel */
+.content { 
+  background-color: white; 
+  height: 90vh; 
+  overflow-y:scroll; 
+}
+
+
+/* Customize fonts */
+body, label, input, button, select {
+  font-family: 'Helvetica Neue', Helvetica;
+  font-weight: 200;
+}
+
+h4 { 
+    font-family: 'Helvetica Neue', Helvetica;
+    font-weight: 200; 
+    color: white;
+}
+h3 { 
+    font-family: 'Helvetica Neue', Helvetica;
+    font-weight: 300; 
+    color: white;
+}
+
+h1, h2 { 
+    font-family: 'Helvetica Neue', Helvetica;
+    font-weight: 400; 
+    color: #1b85aa;
+}
+
+.well {
+  background-color: #157da2;
+  opacity: 0.4;
+}
+
+hr {
+   height: 6px;
+   background: transparent linear-gradient(to right, #157BA3 0%, #60f8f5 100%) repeat scroll 0% 0%;
+   margin-top: 20px;
+   margin-bottom: 20px;
+}
+
+.tabTitlePanel-end {
+   background-image: url("background.png");
+   background-repeat: repeat-x;
+   height: 8px;
+}
+#controls {
+  /* Appearance */
+  background-color: white;
+  padding: 0 20px 20px 20px;
+  cursor: move;
+  /* Fade out while not hovering */
+  opacity: 0.9;
+  zoom: 0.9;
+  transition: opacity 500ms 1s;
+}
+#controls:hover {
+  /* Fade in while hovering */
+  opacity: 0.95;
+  transition-delay: 0;
+}
+
+/* Position and style citation */
+#cite {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  font-size: 12px;
+  padding-left: 160px;
+}
+
+/* If not using map tiles, show a white background */
+.leaflet-container {
+  background-color: white !important;
+}

@@ -1,12 +1,24 @@
-
-
 library(data.table)
+library(dplyr)
 library(shiny)
+library(shinythemes)
+library(shinydashboard)
+library(scales)
+library(plotly)
+library(tidyr)
+library(rgdal)
+library(rgeos)
+library(leaflet)
+library(RColorBrewer)
 
-DF <- data.table(
-  network = c("Agt", "Dir", "Brk"),
-  portfolio = c(4500000, 1200000, 3300000),
-  CR = c(98.2, 97.3, 100.4)
-  )
+
+source("./modules/data_management.R")
+
+### dummy geodata
+source("./modules/data_management_geo.R")
+source("./modules/geodata_management.R")
 
 
+Type <- unique(DF$Type)
+Date <- unique(DF$Date)   
+Time <- unique(DF$Time)   
