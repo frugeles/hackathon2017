@@ -10,4 +10,4 @@
 ## leaflet background
   l <- leaflet(options = leafletOptions(minZoom = 5, maxZoom = 14)) %>% 
     addProviderTiles("Esri.WorldImagery") %>%
-    setView(centr.STL[1], centr.STL[2], zoom = 10)
+    setView(centr.STL[1], centr.STL[2], zoom = 11)
